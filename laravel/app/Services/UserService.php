@@ -34,4 +34,14 @@ class UserService
 
         return JWTAuth::fromUser($user);
     }
+
+    public function getAllUsers()
+    {
+        return $this->userRepository->all(); 
+    }
+
+    public function getUserById($id)
+    {
+        return $this->userRepository->find($id); 
+    }
 }
