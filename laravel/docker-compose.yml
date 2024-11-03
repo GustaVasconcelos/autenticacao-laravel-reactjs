@@ -42,6 +42,14 @@ services:
     networks:
       - authphp-network
 
+  composer:
+    image: composer:latest
+    working_dir: /var/www/html
+    volumes:
+      - .:/var/www/html
+    networks:
+      - authphp-network
+
 networks:
   authphp-network:
     driver: bridge
